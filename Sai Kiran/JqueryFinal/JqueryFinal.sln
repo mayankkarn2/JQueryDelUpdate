@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JqueryFinal", "JqueryFinal\JqueryFinal.csproj", "{F1C2F197-9EAE-4732-9F09-23970F5CFE9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1C2F197-9EAE-4732-9F09-23970F5CFE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C2F197-9EAE-4732-9F09-23970F5CFE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C2F197-9EAE-4732-9F09-23970F5CFE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C2F197-9EAE-4732-9F09-23970F5CFE9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC045B7E-958A-4928-BECD-BDE0EC16CCD4}
+	EndGlobalSection
+EndGlobal
