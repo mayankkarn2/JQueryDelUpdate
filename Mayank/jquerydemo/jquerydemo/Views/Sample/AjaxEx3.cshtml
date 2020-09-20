@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "AjaxEx3";
+}
+
+<h2>AjaxEx3</h2>
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            alert("Done");
+            $("#Empno").blur(function () {
+                var empno = $("#Empno").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/Sample/deleteEmp",
+                    data: "{'Empno':" + empno + "}",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "JSON",
+                    success: function (data) {
+                        alert(data);            
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+
+    <body>
+        Enter Emp Id to delete<input type="text" id="Empno" />
+        <table id="empdata"></table>
+    </body>
+</html>
