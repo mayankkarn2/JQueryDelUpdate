@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "AjaxEx";
+}
+
+<h2>AjaxEx</h2>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/Sample/Fetch",
+                contentType: "application/json;charset=utf-8",
+                datatype: JSON,
+                async: false,
+
+                success: function (data) {
+                    $("#empdata").append("<tr><td>EMPNO</td><td>ENAME</td></tr>");
+                    for (i = 0; i < data.length; i++)
+                    {
+                        $("#empdata").append("<tr><td>" + data[i].EMPNO + "</td><td>" + data[i].ENAME + "</td></tr>");
+
+                    }
+                }
+            });
+        });
+
+
+
+    </script>
+</head>
+<body>
+    <form>
+        <table id="empdata">
+
+        </table>
+        
+        
+    </form>
+
+
+</body>
+</html>

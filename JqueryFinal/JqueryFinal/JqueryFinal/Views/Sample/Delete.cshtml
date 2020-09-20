@@ -1,0 +1,48 @@
+﻿
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnsubmit").click(function ()
+            {
+
+                var E={ };
+                E.EMPNO = $("#TXTEMPNO").val();
+
+                alert(JSON.stringify(E));
+                $.ajax({
+                    type: "POST",
+                    url: "/Sample/deleteEmployee/",
+                    data: JSON.stringify(E),
+                    contentType: "application/json;charset=utf-8",
+                    datatype: JSON,
+                    async: false,
+
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <table>
+        <tr><td>EMPNO</td> <td><input type="text" id="TXTEMPNO" /></td></tr>
+    </table>
+    <input type="submit" id="btnsubmit" />
+</body>
+
+</html>
+
