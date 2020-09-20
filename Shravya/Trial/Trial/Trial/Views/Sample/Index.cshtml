@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".d1").click(function ()
+            {
+                $(this).fadeOut();
+            });
+
+            $("#d2").click(function () {
+                alert("Fading");
+                $(this).fadeOut();
+            });
+
+
+            $("H2").click(function () {
+                alert("H1 Clicked");
+            });
+
+            $("#hide").click(function ()
+            {
+                $(".d1").toggle(1000);
+            });
+
+            $("#show").click(function () {
+                $("#P1").show();
+            });
+            $("td").hover(function ()
+            {
+                $(this).css('background-color', '#00FF00');
+
+            },
+                function () {
+                    $(this).css('background-color', '');
+
+            });
+
+
+
+
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <table><tr style="background-color:yellow"><td>One</td><td>Two</td></tr></table>
+
+</body>
+</html>

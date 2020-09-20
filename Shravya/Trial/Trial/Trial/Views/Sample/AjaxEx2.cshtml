@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "AjaxEx2";
+}
+
+<h2>AjaxEx2</h2>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+                var dno = $('#txtDeptno').val();
+                $.ajax({
+                    type: "POST",
+                    url: "/Sample/FetchDept/",
+                    data: "{'DNO':" + dno + "}",
+                    contentType: "application/json;charset = utf-8",
+                    dataType: "JSON",
+                    async: false,
+
+                    success: function (data) {
+                        $("#empdata").append("<tr><td>EMPNO</td><td>ENAME</td></tr>");
+                        for (i = 0; i < data.length; i++) {
+                            $("#empdata").append("<tr><td>" + data[i].EMPNO + "</td><td>" + data[i].ENAME + "</td></tr>");
+                        }
+
+                    }
+
+                });
+            });
+    </script>
+
+</head>
+<body>
+    
+        Enter Deptno<input type="text" id=" txtDeptno" />
+        <table id="empdata"></table>
+        <input type="submit" id =" submit" value=" getDept"/>
+    
+
+</body>
+</html>
+

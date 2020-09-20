@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "FetchEmp";
+}
+
+<h2>FetchEmp</h2>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#TXTEMPNO").blur(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Sample/Display/",
+                    data:"{'Empno':"+$("#TXTEMPNO").val() + "}",
+
+                    contentType: "application/json;charset=utf-8",
+                    datatype: JSON,
+                    async: false,
+
+                    success: function (data) {
+                        $("#TXTENAME").val(data.ENAME);
+                        $("#JOB").val(data.JOB);
+                        $("#MGR").val(data.MGR);
+                        $("#HIREDATE").val(data.HIREDATE);
+                        $("#SAL").val(data.SAL);
+                        $("#COMM").val(data.COMM);
+                        $("#DEPTNO").val(data.DEPTNO);
+                        $("#GRADE").val(data.Grade);
+
+
+                    }
+                });
+            });
+
+            });
+
+
+
+    </script>
+</head>
+<body>
+    <table>
+        <tr><td>EMPNO</td> <td><input type="text" id="TXTEMPNO" /></td></tr>
+        <tr><td>ENAME</td> <td><input type="text" id="TXTENAME" /></td></tr>
+        <tr><td>JOB</td> <td><input type="text" id="JOB" /></td></tr>
+        <tr><td>MGR</td> <td><input type="text" id="MGR" /></td></tr>
+        <tr><td>HIREDATE</td> <td><input type="text" id="HIREDATE" /></td></tr>
+        <tr><td>SAL</td> <td><input type="text" id="SAL" /></td></tr>
+        <tr><td>COMM</td> <td><input type="text" id="COMM" /></td></tr>
+        <tr><td>DEPTNO</td> <td><input type="text" id="DEPTNO" /></td></tr>
+        <tr><td>GRADE</td> <td><input type="text" id="GRADE" /></td></tr>
+
+    </table>
+    <input type="submit" id="btnsubmit" />
+</body>
+
+</html>

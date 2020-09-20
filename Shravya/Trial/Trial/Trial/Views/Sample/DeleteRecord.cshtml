@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Records from EMP</h2>
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnsubmit").click(function ()
+            {
+
+                var E = $("#TXTEMPNO").val();
+              
+                $.ajax({
+                    type: "POST",
+                    url: "/Sample/DeleteEmp/",
+                    data: "{'EMPNO':" + E + "}",
+                    contentType: "application/json;charset=utf-8",
+                    datatype: JSON,
+                    async: false,
+
+                    success: function (data) {
+                        alert(data);
+                    }
+                    
+                });
+            });
+        });
+
+
+    </script>
+
+
+</head>
+<body>
+    <table>
+        <tr><td>EMPNO</td> <td><input type="text" id="TXTEMPNO" /></td></tr>
+
+    </table>
+    <input type="submit" id="btnsubmit" />
+</body>
+
+</html>
